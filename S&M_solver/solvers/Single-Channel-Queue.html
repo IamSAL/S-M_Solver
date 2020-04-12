@@ -1,0 +1,953 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../imports/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://nightly.datatables.net/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.1.6/css/fixedHeader.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
+    <link rel="stylesheet" href="../../imports/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <title>Single Channel Queue</title>
+</head>
+<body>
+<!--===================
+Header goes here:
+=====================-->
+<div class="header">
+    <nav>
+        <div class="row">
+            <div class="col-md-3 brand">
+                <a href="#"><h2>S&M</h2></a>
+            </div>
+            <div class="col-md-9 menu-items">
+                <ul>
+
+                    <li>Resources</li>
+                    <li>About</li>
+                    <li><i class="fa fa-heart-o" aria-hidden="true"></i>Contribute</li>
+                    <li><i class="fa fa-user-circle-o" aria-hidden="true"></i></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!--===================
+content goes here:
+=====================-->
+<div class="container">
+
+    <!--Hero section-->
+    <div class="hero-container">
+        <div class="hero-title-container">
+            <div class="hero-title">
+                <h3>Single Channel <span>Queueing</span></h3>
+            </div>
+        </div>
+        <div class="hero-description-container">
+            <div class="hero-description">
+                <p>Single point of entry to the system,having one central process or server, thus efficiency of this
+                    type of system largely depends on the power of the central process.</p>
+            </div>
+        </div>
+        <div class="hero-buttons-container">
+            <div class="row hero-buttons">
+
+                <!--Hero section button:go to solver-->
+                <div class="hero-button col-md-4">
+                    <a href="#SCQ_solver" class="">Go to Solver</a>
+                </div>
+                <!--Hero section button:go to solver-->
+
+                <!--Hero section button:Go to Resources-->
+                <div class="hero-button col-md-4 hero-button-secondary">
+                    <a href="#" class="">Resources</a>
+                </div>
+                <!--Hero section button:Go to Resources-->
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--TBA section:info only-->
+    <div class="info-TBA-container">
+        <div class="info-title">
+            <h3><span>Distribution Of</span>Time Between Arrivals</h3>
+        </div>
+        <div class="info-TBA">
+            <div class="row">
+                <div class="info-TBA-left col-md-6">
+                    <!--TBA section:example table-->
+                    <table class="table table-striped table-bordered table-hover TBA-info-Table">
+                        <thead>
+                        <tr>
+                            <th>Time Between Arrival</th>
+                            <th>Probability</th>
+                            <th>Cumulative Probability</th>
+                            <th>Random Range</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>0.125</td>
+                            <td>0.125</td>
+                            <td>001-125</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>0.125</td>
+                            <td>0.250</td>
+                            <td>126-250</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>0.125</td>
+                            <td>0.375</td>
+                            <td>251-375</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>0.125</td>
+                            <td>0.500</td>
+                            <td>376-500</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>0.125</td>
+                            <td>0.625</td>
+                            <td>501-625</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>0.125</td>
+                            <td>0.750</td>
+                            <td>626-750</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>0.125</td>
+                            <td>0.875</td>
+                            <td>751-875</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>0.125</td>
+                            <td>1</td>
+                            <td>876-1000</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--TBA section:example table-->
+                </div>
+                <div class="info-TBA-right col-md-6">
+                    <p>
+                        <br>
+
+                        A table showing the probability of the arrival of customers in minutes, upto a certain limit(Max
+                        TBA).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <!--ST section:info only-->
+    <div class="info-ST-container">
+
+
+        <div class="info-TBA-container">
+            <div class="info-title">
+                <h3><span>Table Of</span>Service Time Distribution</h3>
+            </div>
+            <div class="info-TBA">
+                <div class="row">
+                    <!--TBA section: example ST Table-->
+                    <div class="info-TBA-left col-md-6">
+                        <table class="table table-striped table-bordered table-hover TBA-info-Table">
+                            <thead>
+                            <tr>
+                                <th>Service Time</th>
+                                <th>Probability</th>
+                                <th>Cumulative Probability</th>
+                                <th>Random Range</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>0.10</td>
+                                <td>0.10</td>
+                                <td>01-10</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>0.20</td>
+                                <td>0.30</td>
+                                <td>11-30</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>0.30</td>
+                                <td>0.60</td>
+                                <td>31-60</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>0.25</td>
+                                <td>0.85</td>
+                                <td>61-85</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>0.10</td>
+                                <td>0.95</td>
+                                <td>86-95</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>0.05</td>
+                                <td>1</td>
+                                <td>96-100</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--TBA section: example ST Table-->
+
+                    <!--TBA section: Service time info-->
+                    <div class="info-TBA-right col-md-6">
+                        <p>
+                            A table showing the probability of the average service time a customer requires, upto a
+                            certain limit(Max Service Time).
+                        </p>
+                        <span id="SCQ_solver"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!--Main Solver:Intermediate input-outputs-->
+    <div class="SQC-solver-container">
+        <hr class="SQC_hr offset-3">
+        <div class="SQC-solver-title">
+            <h3>sqc<span>Solver</span></h3>
+        </div>
+        <!--step1:TBA Generation-->
+        <div class="SQC-step-container">
+            <div class="SQC-step1">
+                <div class="info-title info-title-step1">
+                    <h3><span>Step #1</span>Generating TBA table</h3>
+                    <hr class="step-title">
+                </div>
+                <div class="info-TBA">
+                    <div class="row">
+                        <!--input:TBA table input-->
+                        <div class="SQC-TBA-input-container col-md-5">
+                            <div class="input-TBA">
+                                <span class="error msg" id="msgTBA">Please enter Max TBA first.</span>
+                                <div class="input-group">
+
+                                    <!--MAX TBA:-->
+                                    <label for="maxTBA" class="input-label mr-2">Max TBA:</label>
+                                    <input class="input-field ml-2 " type="number" name="maxTBA" id="maxTBA" maxlength="10">
+                                </div>
+
+                                <!--TBA Probability type auto or manual-->
+                                <div class="input-group">
+                                    <label for="TBA-probability-Type" class="input-label mr-2">Probabilies:</label>
+                                    <div class="TBA-probability-Type ml-2 " id="TBA-probability-Type">
+
+                                        <div class="row">
+
+
+                                            <label for="manual_TBA_Probability" class="radio" >
+                                                <input type="radio" name="TBA_probability" id="manual_TBA_Probability"
+                                                       class="hidden" >
+                                                <span class="label"></span> Manual  Input
+                                            </label>
+
+                                            <label for="auto_TBA_Probability" class="radio" onclick="">
+                                                <input type="radio" checked name="TBA_probability"
+                                                       id="auto_TBA_Probability" class="hidden"/>
+                                                <span class="label"></span>Same Probability
+                                            </label>
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+                                <!--Manual TBA probability input fields(generated depending on previous choice-->
+                                <div class="input-group TBA_Generated_container disabled">
+                                    <label for="TBA_Generated_Fields_container" class="input-label mr-2">Enter Probabilies:</label>
+                                    <div class=" ml-2 " id="TBA_Generated_Fields_container">
+                                        <p class="digitMessage" id="digitMessageTBA">Current: <span id="currentValueTBA" class="currentValue"></span><span id="requiredValueTBA" class="requiredValue"></span></p>
+                                        <div class="row" id="TBA_Generated_Fields">
+
+
+
+
+
+
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+                                <div class="mb-4">
+                                    <p class="digitInfo  custom-select-sm ml-1">Random Digit Range: <span id="digitTBAdisplay"></span> <span id="digitTBAExample"></span> <span class="digitChange" id="digitChangeTBA">Change?</span> <select
+                                            id="digitChangeFieldTBA" type="number" class=" w-25 digitField custom-select-sm">
+                                        <option value="3">1000(3)</option>
+                                        <option value="4">10000(4)</option>
+                                        <option value="5">100000(5)</option>
+                                        <option value="6">1000000(6)</option>
+                                    </select></p>
+
+                                </div>
+
+                                <!--Button:TBA table generate-->
+                                <div class="input-group">
+                                    <button class="input-btn" id="generateTBA_btn"><i class="fa fa-cog" aria-hidden="true"></i>Generate TBA
+                                        Table <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        <!--output:TBA table output-->
+                        <div class="info-TBA-left col-md-7 SQC-TBA-output-container">
+                            <div id="tableContainerTBA"><table class="table table-striped table-bordered table-hover TBA-info-Table TBA_output_table"
+                                                               id="outputTBA_table">
+                                <thead>
+                                <tr>
+                                    <th>Time Between Arrival</th>
+                                    <th>Probability</th>
+                                    <th>Cumulative Probability</th>
+                                    <th>Random Range</th>
+                                </tr>
+                                </thead>
+                                <tbody id="outputTBA_table_content">
+                                <tr>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                </tr>
+                                <tr>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                </tr>
+                                <tr>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                </tr>
+                                <tr>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                </tr>
+                                <tr>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                </tr>
+                                <tr>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                </tr>
+
+
+                                </tbody>
+                            </table></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--step2:ST Generation-->
+        <div class="SQC-step-container">
+            <div class="SQC-step2">
+                <div class="info-title info-title-step2">
+                    <h3><span>Step #2</span>Generating SERVICE TIME table</h3>
+                    <hr class="step-title">
+                </div>
+                <div class="info-ST">
+                    <div class="row">
+                        <div class="SQC-ST-input-container col-md-5">
+                            <div class="input-ST">
+                                <span class="error msg" id="msgST" >Please enter Max ST first</span>
+                                <div class="input-group">
+                                    <!--input:MAX ST-->
+                                    <label for="maxST" class="input-label mr-2">Max ST:</label>
+                                    <input class="input-field ml-2 " type="number" name="maxST" id="maxST">
+                                </div>
+                                <div class="input-group">
+                                    <!--input:ST probability type-->
+                                    <label for="ST-probability-Type" class="input-label mr-2">Probabilies:</label>
+                                    <div class="ST-probability-Type ml-2 " id="ST-probability-Type">
+                                        <div class="row">
+
+
+                                            <label for="manual_ST_Probability" class="radio">
+                                                <input type="radio" name="ST-probability" id="manual_ST_Probability"
+                                                       class="hidden"/>
+                                                <span class="label"></span> Manual Input
+                                            </label>
+
+                                            <label for="auto_ST_Probability" class="radio">
+                                                <input type="radio" checked name="ST-probability"
+                                                       id="auto_ST_Probability" class="hidden"/>
+                                                <span class="label"></span>Same Probability
+                                            </label>
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+                                <!--Manual ST probability input fields(generated depending on previous choice-->
+                                <div class="input-group ST_Generated_container disabled">
+                                    <label for="ST-probabilities" class="input-label mr-2">Enter Probabilies:</label>
+                                    <div class="ST-probabilities ml-2 " id="ST-probabilities">
+                                        <p class="digitMessage" id="digitMessageST">Current: <span id="currentValueST" class="currentValue"></span><span id="requiredValueST" class="requiredValue"></span></p>
+                                        <div class="row" id="ST_Generated_Fields">
+
+
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+                                <div class="mb-4">
+                                    <p class="digitInfo  custom-select-sm ml-1">Random Digit Range: <span id="digitSTdisplay"></span> <span id="digitSTExample"></span> <span class="digitChange" id="digitChangeST">Change?</span> <select
+                                            id="digitChangeFieldST" type="number" class=" w-25 digitField custom-select-sm">
+                                        <option value="2">100(2)</option>
+                                        <option value="3">1000(3)</option>
+                                        <option value="4">10000(4)</option>
+                                        <option value="5">100000(5)</option>
+                                    </select></p>
+
+                                </div>
+
+
+                                <!--Button: Generate  ST table-->
+                                <div class="input-group">
+                                    <button class="input-btn" id="generateST_btn"><i class="fa fa-cog" aria-hidden="true"></i>Generate
+                                        ST Table <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        <!--output: ST Table -->
+                        <div class="info-ST-left col-md-7 SQC-ST-output-container">
+                            <div id="tableContainerST"><table class="table table-striped table-bordered table-hover ST-info-Table ST_output_table nowrap"
+                                                              id="SQC-ST-output-table">
+                                <thead>
+                                <tr>
+                                    <th>Service <br>Time</th>
+                                    <th>Probability</th>
+                                    <th>Cumulative <br>Probability</th>
+                                    <th>Random Range</th>
+                                </tr>
+                                </thead>
+                                <tbody id="outputST_table_content">
+                                <tr>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                </tr>
+                                <tr>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                </tr>
+                                <tr>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                </tr>
+                                <tr>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                </tr>
+                                <tr>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                </tr>
+                                <tr>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                    <td>NA</td>
+                                </tr>
+
+
+                                </tbody>
+                            </table></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--step3:Simulation Table Generation-->
+        <div class="SQC-step-container">
+            <div class="SQC-step3">
+                <div class="info-title info-title-final info-title-step3">
+                    <h3><span>Step #3</span>Generating Simulation table</h3>
+                    <hr class="step-title hr-final">
+                </div>
+                <div class="info-Simulation">
+                    <div class="row">
+                        <div class="SQC-Simulation-input-container col-md-8">
+                            <div class="input-Simulation">
+                                <span class="error msg" id="msgSimulation" >Please enter customer number first</span>
+                                <div class="input-group">
+                                    <!--MAX customers-->
+                                    <label for="customerNum" class="input-label mr-2"><span>Number of Customers:</span></label>
+                                    <input class="input-field ml-2 " type="number" name="customerNum" id="customerNum">
+                                </div>
+                                <!--Random number type-->
+                                <div class="input-group">
+                                    <label for="Simulation-random-Type" class="input-label mr-2"><span>Random (TBA)</span>:</label>
+                                    <div class="Simulation-random-Type ml-2 " id="Simulation-random-Type">
+                                        <div class="row">
+
+
+                                            <label for="manual_Simulation_Randoms" class="radio">
+                                                <input type="radio" name="Simulation-probability"
+                                                       id="manual_Simulation_Randoms" class="hidden"/>
+                                                <span class="label"></span> Manual Input
+                                            </label>
+
+                                            <label for="auto_Simulation_Randoms" class="radio" id="simulation_auto_label">
+                                                <input type="radio" checked name="Simulation-probability"
+                                                       id="auto_Simulation_Randoms" class="hidden"/>
+                                                <span class="label"></span>Auto Generated
+                                            </label>
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+                                <!--Manual Random number input fields(generated depending on previous choice-->
+                                <div class="input-group Simulation_Generated_container disabled">
+                                    <label for="Simulation-random-numbers" class="input-label mr-2"><span>Enter Random Numbers:</span></label>
+                                    <div class="ST-probabilities ml-2 " id="Simulation-random-numbers">
+                                        <p class="digitMessage" id="digitMessageSimulation">Enter Random values for TBA</p>
+                                        <div class="row" id="Simulation_Generated_Fields">
+
+
+
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+
+                                <!--Random number type-->
+                                <div class="input-group">
+                                    <label for="Simulation-random-Type" class="input-label mr-2"><span>Random (service)</span>:</label>
+                                    <div class="Simulation-random-Type ml-2 " id="Simulation-random-service">
+                                        <div class="row">
+
+
+                                            <label for="manual_Simulation_Randoms_Service" class="radio">
+                                                <input type="radio" name="Simulation-probability-service"
+                                                       id="manual_Simulation_Randoms_Service" class="hidden"/>
+                                                <span class="label"></span> Manual Input
+                                            </label>
+
+                                            <label for="auto_Simulation_Randoms_Service" class="radio" id="simulation_auto_label_service">
+                                                <input type="radio" checked name="Simulation-probability-service"
+                                                       id="auto_Simulation_Randoms_Service" class="hidden"/>
+                                                <span class="label"></span>Auto Generated
+                                            </label>
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+                                <!--Manual Random number input fields(generated depending on previous choice-->
+                                <div class="input-group Simulation_Generated_container_service disabled">
+                                    <label for="Simulation-random-numbers" class="input-label mr-2"><span>Enter Random Numbers:</span></label>
+                                    <div class="ST-probabilities ml-2 " id="Simulation-random-numbers_service">
+                                        <p class="digitMessage" id="digitMessageSimulation_service">Enter Random values for Service Time</p>
+                                        <div class="row" id="Simulation_Generated_Fields_service">
+
+
+
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-4">
+                            <!--Button: Final Solve button to generate simulation table-->
+                            <div class="input-group">
+                                <button class="btn-simulation" id="generateSimulation_btn">SOLVE<i class="fa fa-chevron-down"
+                                                                       aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="SQC-Simulation-output-container">
+                        <!--output:Simulation table-->
+                        <div id="tableContainerSimulation">
+                        <table class="SQC-Simulation-output-table table table-striped table-bordered table-hover Simulation-info-Table Simulation_output_table" id="SQC-Simulation-output-table">
+                            <thead>
+                            <tr>
+                                <th>Customer</th>
+                                <th>TBA</th>
+                                <th>AT</th>
+                                <th>ST</th>
+                                <th>TSB</th>
+                                <th>TCW</th>
+                                <th>TSE</th>
+                                <th>TCS</th>
+                                <th>IS</th>
+                            </tr>
+                            </thead>
+                            <tbody id="outputSimulation_table_content">
+
+                            <tr>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                            </tr>
+                            <tr>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                            </tr>
+                            <tr>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                            </tr>
+                            <tr>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                            </tr>
+                            <tr>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                            </tr>
+                            <tr>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                            </tr>
+                            <tr>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                            </tr>
+                            <tr>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                            </tr>
+                            <tr>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                                <td>NA</td>
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+    </div>
+
+    <!--Main Output-->
+    <div class="output-cards-container">
+        <div class="output-cards">
+            <div class="row">
+                <!--Card :average waiting time-->
+                <div class="single-output-card-container col-md-3 offset-1 ml-auto mobile-card ">
+                    <div class="single-output-card">
+                        <div class="row">
+                            <div class="col-md-7 output-card-title">
+                                <h4><span>Average</span>Waiting <br> Time</h4>
+                            </div>
+                            <div class="col-md-3 card-value">
+                                <!--Card Output:average waiting time-->
+                                <h3><span id="avg_waiting_time" class="count">N/A</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Card :average service time-->
+                <div class="single-output-card-container col-md-3 offset-1 mobile-card ">
+                    <div class="single-output-card">
+                        <div class="row">
+                            <div class="col-md-8 output-card-title">
+                                <h4><span>Average</span>Service <br> Time</h4>
+                            </div>
+                            <div class="col-md-4 card-value">
+                                <!--Card output:average service time-->
+                                <h3><span id="avg_service_time" class="count">N/A</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Card :average Time Between Arrivals-->
+                <div class="single-output-card-container col-md-3 offset-1 mr-auto mobile-card">
+                    <div class="single-output-card">
+                        <div class="row">
+                            <div class="col-md-8 output-card-title">
+                                <h4><span>Average</span>Time Between Arrivals</h4>
+                            </div>
+                            <div class="col-md-4 card-value">
+                                <!--Card output:average Time Between Arrivals-->
+                                <h3><span id="avg_tba" class="count">N/A</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Card :average Time User Spends in System-->
+                <div class="single-output-card-container col-md-3 offset-1 ml-auto mobile-card ">
+                    <div class="single-output-card">
+                        <div class="row">
+                            <div class="col-md-7 output-card-title">
+                                <h4 style="font-size: 17px"><span>Average</span>Time Customer Spends</h4>
+                            </div>
+                            <div class="col-md-3 card-value">
+                                <!--Card output:average Time User Spends in System-->
+                                <h3><span id="avg_tcs" class="count">N/A</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Card :Probability of waiting in Queue-->
+                <div class="single-output-card-container col-md-3 offset-1 mobile-card ">
+                    <div class="single-output-card">
+                        <div class="row">
+                            <div class="col-md-8 output-card-title">
+                                <h4><span>probability of</span>Waiting <br> in Queue</h4>
+                            </div>
+                            <div class="col-md-4 card-value">
+                                <!--Card output:Probability of waiting in Queue-->
+                                <h3><span id="probability_tcw" class="count">N/A</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Card :Average Waiting Time of Those Who wait-->
+                <div class="single-output-card-container col-md-3 offset-1 mr-auto mobile-card">
+                    <div class="single-output-card">
+                        <div class="row">
+                            <div class="col-md-8 output-card-title">
+                                <h4><span>Average</span>Waiting Time of Those Who Wait</h4>
+                            </div>
+                            <div class="col-md-4 card-value">
+                                <!--Card Output:Average Waiting Time of Those Who wait-->
+                                <h3><span id="avg_waiting_of_who_waits" class="count">N/A</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Card :Probability of Server Being Busy-->
+                <div class="single-output-card-container col-md-3 offset-1 ml-auto mobile-card ">
+                    <div class="single-output-card">
+                        <div class="row">
+                            <div class="col-md-7 output-card-title">
+                                <h4><span>probability of </span>Server <br>Being Busy</h4>
+                            </div>
+                            <div class="col-md-3 card-value">
+                                <!--Card Output:Probability of Server Being Busy-->
+                                <h3><span id="probability_of_busy_server" class="count">N/A</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Card :Probability of Server Being Idle-->
+                <div class="single-output-card-container col-md-3 offset-1 mobile-card ">
+                    <div class="single-output-card">
+                        <div class="row">
+                            <div class="col-md-8 output-card-title">
+                                <h4><span>probability of</span>Serve <br>Being Idle</h4>
+                            </div>
+                            <div class="col-md-4 card-value">
+                                <!--Card Output:Probability of Server Being Idle-->
+                                <h3><span id="probability_of_idle_server" class="count">N/A</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Card :The Time I took to Solve This Math!-->
+                <div class="single-output-card-container col-md-3 offset-1 mr-auto mobile-card">
+                    <div class="single-output-card">
+                        <div class="row">
+                            <div class="col-md-7 output-card-title">
+                                <h4><span>The Time</span>I Took to Solve This Math!</h4>
+                            </div>
+                            <div class="col-md-5 card-value">
+                                <!--Card Output:The Time I took to Solve This Math!-->
+                                <h3><span id="time_to_execute" class=" ">N/A</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="footer-bg-image"></div>
+
+</div>
+
+<!--===================
+content goes here:ends
+=====================-->
+
+<!--===================
+Footer goes here:
+=====================-->
+
+<div class="footer">
+    <p>© <a href="https://github.com/IamSAL" target="_blank">Sheikh Salman</a></p>
+</div>
+
+
+<!--JQuery-->
+<script src="../../imports/js/jquery.js"></script>
+<script src="../../imports/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.17/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdn.datatables.net/fixedheader/3.1.6/js/dataTables.fixedHeader.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+<script src="../script.js"></script>
+<!--scq math solver script-->
+<script src="scq.js"></script>
+
+
+
+</body>
+</html>
