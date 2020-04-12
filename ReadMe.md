@@ -4,7 +4,7 @@ currently supported:
 -Single Channel Queueing 
 
 
-Live:https://iamsal.github.io/S-M_Solver/
+Live:https://iamsal.github.io/SM_Solver/
 
 
 
